@@ -23,8 +23,10 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
+12. patchworkandpebbles modifications
 
 */
+
 
 
 /* 1. Global - Set up the things
@@ -400,7 +402,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card:hover {
     box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
     transition: all 0.4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
+    -webkit-transform: translate3D(0, -1px, 0) scale(1.02);
+            transform: translate3D(0, -1px, 0) scale(1.02);
 }
 
 .post-card-image-link {
@@ -414,7 +417,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     width: 100%;
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .post-card-content-link {
@@ -470,7 +474,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     background: color(var(--lightgrey) l(+10%));
     border-radius: 100%;
 
-    object-fit: cover;
+    -o-object-fit: cover;
+
+       object-fit: cover;
 }
 
 .post-card-meta .profile-image-wrapper,
@@ -567,13 +573,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
     pointer-events: none;
 }
 
 .author-list-item:hover .author-name-tooltip {
     opacity: 1.0;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
 }
 
 @media (max-width: 650px) {
@@ -719,7 +727,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-image img {
     width: 100%;
     height: 800px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 @media (max-width: 1170px) {
@@ -770,8 +779,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 20px;
     height: 200px;
     background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
 }
 
 .post-full-content:after {
@@ -784,8 +795,10 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 20px;
     height: 200px;
     background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
@@ -971,7 +984,8 @@ Usage (In Ghost editor):
     height: 30px;
     background: color(var(--lightgrey) l(+10%));
     box-shadow: #fff 0 0 0 5px;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .post-full-content h1,
@@ -1208,7 +1222,10 @@ Usage (In Ghost editor):
     font-size: 1.8rem;
     line-height: 1em;
     font-weight: normal;
-    user-select: text;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
     border-radius: 5px;
     transition: border-color 0.15s linear;
 
@@ -1402,7 +1419,8 @@ Usage (In Ghost editor):
     box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-    transform: scale(0.98) translateY(15px);
+    -webkit-transform: scale(0.98) translateY(15px);
+            transform: scale(0.98) translateY(15px);
     pointer-events: none;
 }
 
@@ -1422,7 +1440,8 @@ Usage (In Ghost editor):
 
 .author-list-item .author-card.hovered {
     opacity: 1.0;
-    transform: scale(1) translateY(0px);
+    -webkit-transform: scale(1) translateY(0px);
+            transform: scale(1) translateY(0px);
     pointer-events: auto;
 }
 
@@ -1519,7 +1538,9 @@ Usage (In Ghost editor):
     background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
     border-radius: 5px;
 
-    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+            backdrop-filter: blur(2px);
 }
 
 .read-next-card-header {
@@ -1642,13 +1663,15 @@ Usage (In Ghost editor):
     border-bottom: rgba(0,0,0,0.06) 1px solid;
     background: rgba(255,255,255,0.95);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translate3d(0, -120%, 0);
+    -webkit-transform: translate3d(0, -120%, 0);
+            transform: translate3d(0, -120%, 0);
 }
 
 .floating-active {
     visibility: visible;
     transition: all 500ms cubic-bezier(0.22, 1, 0.27, 1);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }
 
 .floating-header-logo {
@@ -1730,7 +1753,8 @@ Usage (In Ghost editor):
     width: 18px;
     height: 18px;
     stroke: rgba(0,0,0,0.7);
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
 }
 
 .floating-header-share-tw,
@@ -1764,7 +1788,11 @@ Usage (In Ghost editor):
     color: var(--blue);
     background: transparent;
 
-    appearance: none;
+    -webkit-appearance: none;
+
+       -moz-appearance: none;
+
+            appearance: none;
 }
 
 .progress::-webkit-progress-bar {
@@ -1891,7 +1919,7 @@ Usage (In Ghost editor):
 }
 
 .kg-embed-card .fluid-width-video-wrapper {
-    margin: 0;
+    margin: 0; 
 }
 
 
@@ -2072,7 +2100,9 @@ Usage (In Ghost editor):
     transition: opacity 200ms ease-in;
     pointer-events: none;
 
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+            backdrop-filter: blur(3px);
 }
 
 .subscribe-overlay:target {
@@ -2135,7 +2165,10 @@ Usage (In Ghost editor):
     line-height: 1em;
     font-weight: normal;
     letter-spacing: 0.5px;
-    user-select: text;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
     border-radius: 8px;
     transition: border-color 0.15s linear;
 
@@ -2195,7 +2228,8 @@ Usage (In Ghost editor):
     height: 2px;
     background: #fff;
     opacity: 0.8;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .subscribe-overlay-close:after {
@@ -2208,7 +2242,8 @@ Usage (In Ghost editor):
     height: 2px;
     background: #fff;
     opacity: 0.8;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 .subscribe-overlay-close:hover {
@@ -2277,4 +2312,195 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
+}
+
+
+/*patchworkandpebbles modifications*/
+.post-full-content p{
+    font-size: 0.9em;
+}
+
+.site-header:before {
+    background: #000;
+}
+
+.post-full-image {
+    margin-bottom: 0;
+}
+
+.read-next-card-header-title {
+    margin-bottom: 1em;
+}
+
+.site-footer {
+    background: #000;
+}
+
+.site-logo {
+    max-height: 75px;
+}
+
+.site-header-content {
+    min-height: 300px;
+    max-height: 350px;
+}
+
+.post-full-meta-date {
+    color: var(--midgrey);
+}
+
+.post-full-meta a {
+    text-decoration: underline;
+}
+
+.post-full-image img {
+    height: 400px;
+}
+
+@media (min-width: 500px) {
+    .post-full-content {
+        margin-top: -15px;
+    }
+}
+
+.post-full-content:before {
+    top: -8px;
+    left: -3px;
+    width: 13px;
+    height: 500px;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+}
+
+.post-full-content:after {
+    top: -8px;
+    right: -3px;
+    width: 13px;
+    height: 500px;
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+}
+
+.site-header {
+    background-color: #000;
+}
+
+@media (min-width: 900px) {
+    .tag-template .post-feed {
+        margin-top: -30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-template .post-feed {
+        margin-top: -30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .home-template .site-nav {
+        top: -30px;
+    }
+}
+
+.post-card-excerpt {
+    font-family: 'Noto Serif', Serif;
+}
+
+.site-footer-top-container {
+    max-width: 800px;
+}
+
+.site-footer {
+    padding-bottom: 20px;
+}
+
+.about-footer {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 1.5em 0 3em 0;
+}
+
+.about-footer a {
+    text-decoration: underline;
+    color: grey;
+}
+
+.social-icons-footer {
+    text-align: center;
+    margin: 1.5em 0 2.8em 0;
+}
+
+.social-icons-footer i {
+    font-size: 2em;
+    padding: 10px 10px;
+}
+
+.subscribe-footer {
+    margin: 1.5em 0 2.8em 0;
+    text-align: center;
+}
+
+#mc_embed_signup form {
+    padding: 6px 0 0 0;
+}
+
+#mc_embed_signup .button{
+    background-color: var(--blue);
+    text-transform: lowercase;
+    height: 50px;
+    font-size: 1.3em;
+    border-radius: 1px;
+    border: none;
+}
+
+#mc_embed_signup input.email{
+    height: 50px;
+    font-size: 1.2em;
+    padding: 0px 0.9em;
+    border-radius: 1px;
+    border: none;
+}
+
+.site-header-content .author-profile-image {
+    width: 175px;
+    height: 175px;
+}
+
+.nav li button {
+    display: block;
+    margin: 0;
+    padding: 10px 12px;
+    color: #fff;
+    opacity: 0.8;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.site-nav {
+    overflow-y: visible;
+}
+
+.author-inner {
+    max-width: 1040px;
 }

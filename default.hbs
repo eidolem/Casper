@@ -12,7 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    {{!-- Mailchimp --}}
+    <style type="text/css">
+        #mc_embed_signup{background:#000; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    </style>
+
+    {{!-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -27,13 +38,39 @@
 
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
+            <div class="site-footer-top-container inner">
+                <div class="about-footer">
+                    <div>Years ago I realized that 90% of the information I searched for in my daily life came from others--personal blogs, discussion forums, word of mouth--rather than from traditional news sources. Since then, I've been writing guides to help and inspire others. <a href="http://patchworkandpebbles.com/about/melodie">Learn more.</a>
+                    </div>  
+                </div>
+            </div>
+            <div class="subscribe-footer">
+                <div>Get an email when there's a new post, nothing else.</div>
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                <form action="https://patchworkandpebbles.us16.list-manage.com/subscribe/post?u=f890dbb845edca0737c3d2019&amp;id=96fb5c0f29" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f890dbb845edca0737c3d2019_96fb5c0f29" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </div>
+            <div class="social-icons-footer">
+                <a href="https://www.instagram.com/patchworkandpebbles/" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Instagram - Footer');"><i class="fab fa-instagram" alt="instagram"></i></a>
+                <a href="https://www.linkedin.com/in/melodie-meigs" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'LinkedIn - Footer');"><i class="fab fa-linkedin" alt="linkedin"></i></a>
+                <a href="mailto:patchworkandpebbles@gmail.com" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Email - Footer');"><i class="far fa-envelope" alt="email"></i></a>
+                <a href="http://youtube.com/eidolem7" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'YouTube - Footer');"><i class="fab fa-youtube" alt="youtube"></i></a>
+            </div>
+
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+                </section>
                 <nav class="site-footer-nav">
-                    <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                    <a target="_blank" href="http://patchworkandpebbles.com/affiliate-disclosure">Affiliate Disclosure</a><a target="_blank" href="http://patchworkandpebbles.com/privacy-policy">Privacy Policy</a>
+                    <a target="_blank" href="http://patchworkandpebbles.com/terms">Terms</a>
                 </nav>
             </div>
         </footer>
@@ -63,9 +100,8 @@
             var height = image.attributes.height.value;
             var ratio = width / height;
             container.style.flex = ratio + ' 1 0%';
-        })
+        });
     </script>
-
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script
@@ -73,7 +109,7 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 
     {{#if pagination.pages}}
     <script src="{{asset "built/infinitescroll.js"}}"></script>

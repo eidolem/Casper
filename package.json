@@ -1,6 +1,6 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "name": "patchworkandpebbles-theme",
+    "description": "The theme for patchworkandpebbles.com, based off of the Ghost Casper theme.",
     "demo": "https://demo.ghost.io",
     "version": "2.9.1",
     "engines": {
@@ -18,9 +18,9 @@
         "test": "gscan ."
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Melodie Meigs",
+        "email": "patchworkandpebbles@gmail.com",
+        "url": "patchworkandpebbles.com"
     },
     "gpm": {
         "type": "theme",
@@ -59,7 +59,7 @@
         "pump": "3.0.0"
     },
     "config": {
-        "posts_per_page": 25,
+        "posts_per_page": 40,
         "image_sizes": {
             "xxs": {
                 "width": 30

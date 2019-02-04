@@ -1,0 +1,13 @@
+<ul class="nav" role="menu">
+    {{#foreach navigation}}
+    	<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+{{!--     <li class="dropdown">
+    	<button>Categories&nbsp&nbsp<i class="fas fa-angle-down"></i></button>
+    	<div class="dropdown-content">
+    		<a href="#">Link 1</a>
+    		<a href="#">Link 2</a>
+    		<a href="#">Link 3</a>
+    	</div>
+    </li> --}}
+</ul>

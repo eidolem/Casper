@@ -19,7 +19,7 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    <time class="post-full-meta-date" datetime="{{date updated_at format="YYYY-MM-DD"}}">{{date updated_at format="D MMMM YYYY"}}</time>
                     {{#primary_tag}}
                         <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
                     {{/primary_tag}}
@@ -45,6 +45,7 @@ into the {body} of the default.hbs template --}}
             </figure>
             {{/if}}
 
+
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
@@ -59,21 +60,6 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
-
-            <footer class="post-full-footer">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
 
             {{!--
             <section class="post-full-comments">
@@ -102,12 +88,12 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 >
                     <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
+                        <small class="read-next-card-header-sitetitle">&mdash; more on &mdash;</small>
                         {{#../primary_tag}}
                         <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
-                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
+                    {{!-- <div class="read-next-divider">{{> "icons/infinity"}}</div> --}}
                     <div class="read-next-card-content">
                         <ul>
                             {{#foreach related_posts}}
