@@ -115,6 +115,16 @@
     <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{/if}}
 
+    <script>
+        $.get(ghost.url.api('tags')).done(function (data) {
+            $(data.tags).each(function(i, tag) {
+                var item = "<li><a href={{@site.url}}/tag/" + tag.slug + ">" + tag.name + "</a></li>";
+                $('div.dropdown-content').append(item);
+                $('.sidenav-content').append(item);
+            })
+        });
+    </script>
+
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
@@ -123,3 +133,4 @@
 
 </body>
 </html>
+

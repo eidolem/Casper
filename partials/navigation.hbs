@@ -2,12 +2,37 @@
     {{#foreach navigation}}
     	<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{label}}</a></li>
     {{/foreach}}
-{{!--     <li class="dropdown">
+    <li class="dropdown">
     	<button>Categories&nbsp&nbsp<i class="fas fa-angle-down"></i></button>
-    	<div class="dropdown-content">
-    		<a href="#">Link 1</a>
-    		<a href="#">Link 2</a>
-    		<a href="#">Link 3</a>
-    	</div>
-    </li> --}}
+    	<div class="dropdown-content"></div>
+    </li>
+    <li>
+	  	<a href="javascript:void(0);" class="icon" onclick="openNav()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</li>
 </ul>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    {{#foreach navigation}}
+    	<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+    <li>CATEGORIES
+    	<ul class="sidenav-content"></ul>
+    </li>
+</div>
+
+<span onclick="openNav()"></span>
+
+
+
+<script>
+	function openNav() {
+	  document.getElementById("mySidenav").style.width = "350px";
+	}
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	}
+</script>
+

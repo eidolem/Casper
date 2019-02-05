@@ -2497,8 +2497,70 @@ Usage (In Ghost editor):
   display: block;
 }
 
+.nav li a.icon {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .nav li:not(:last-child) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav li a.icon {
+        float: left;
+        display: block;
+        padding-left: 20px;
+        font-size: 1.5em;
+    }
+}
+
+.nav {
+    font-size: 1.5rem;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  font-family: 'Roboto';
+}
+
+.sidenav li, .sidenav li ul {
+  padding: 0 8px 0 20px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--midgrey);
+  display: block;
+  transition: 0.3s;
+  list-style: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 3em;
+  margin-left: 50px;
+}
+
 .site-nav {
     overflow-y: visible;
+}
+
+@media screen and (max-width: 500px) {
+    .site-nav {
+        position: fixed;
+        top: 10px;
+    }
 }
 
 .author-inner {
