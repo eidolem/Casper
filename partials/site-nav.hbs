@@ -5,5 +5,37 @@
         {{/if}}
     </div>
     <div class="site-nav-right">
+    	<form class="pp-search">
+		    <input type="text" id="search-field" placeholder="Search" href="javascript:void(0)" class="openSearch" onkeydown="openSearch()">
+		    <i class="fas fa-search"></i>
+		    <div id="ppSearchResults" class="pp-search-results">
+		    	<a href="javascript:void(0)" class="closebtn" onclick="closeSearch()">&times;</a>
+		    	<section id="results"></section>
+		 	</div>
+		</form>
     </div>
 </nav>
+
+
+
+<script>
+	function openSearch() {
+	  	document.getElementById("ppSearchResults").style.display = "block";
+	  	document.getElementsByTagName("BODY")[0].setAttribute("style", "overflow: hidden; height: 100vh;");
+	  	document.getElementsByTagName("MAIN")[0].setAttribute("style", "pointer-events: none");
+	}
+	function closeSearch() {
+	  	document.getElementById("ppSearchResults").style.display = "none";
+	  	document.getElementsByTagName("BODY")[0].setAttribute("style", "overflow: scroll; height: auto;");
+	 	document.getElementsByTagName("MAIN")[0].setAttribute("style", "pointer-events: auto");
+	}
+</script>
+
+<script>
+	var clickOffSearch = document.getElementById("ppSearchResults");
+	window.onclick = function(event) {
+		if (event.target != clickOffSearch) {
+			closeSearch();
+		}
+	}
+</script>

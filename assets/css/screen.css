@@ -2521,16 +2521,16 @@ Usage (In Ghost editor):
 }
 
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 1;
+  top: 0; 
   left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: #111; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s;
   font-family: 'Roboto';
 }
 
@@ -2538,31 +2538,112 @@ Usage (In Ghost editor):
   padding: 0 8px 0 20px;
   text-decoration: none;
   font-size: 2rem;
-  color: var(--midgrey);
+  color: #dcdcdc;
   display: block;
   transition: 0.3s;
   list-style: none;
 }
 
-.sidenav .closebtn {
+.sidenav .closebtn, .pp-search-results .closebtn {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 25px;
   font-size: 3em;
   margin-left: 50px;
+  text-decoration: none;
 }
 
-.site-nav {
-    overflow-y: visible;
+@media (max-width: 700px) {
+    .site-nav-right {
+        display: flex;
+    }
 }
 
-@media screen and (max-width: 500px) {
-    .site-nav {
-        position: fixed;
+@media screen and (min-width: 500px) {
+    .home-template .site-nav {
         top: 10px;
+        overflow-y: visible;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .post-template .site-nav, .author-template .site-nav, .page-template .site-nav, .tag-template .site-nav, .error-template .site-nav {
+        overflow-y: visible ;
     }
 }
 
 .author-inner {
     max-width: 1040px;
+}
+
+form input {
+    color: #000;
+}
+
+.pp-search input{
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 0px 0px 5px 5px;
+    margin-right: 10px;
+    width: 150px;
+}
+
+.pp-search i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.pp-search-results {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background: #fff;
+    color: #000;
+    width: 60vw;
+    height: 90vh;
+    overflow: scroll;
+    padding: 75px 50px;
+    display: none;
+    border-radius:  5px;
+}
+
+@media (max-width: 700px) {
+    .pp-search-results {
+        padding: 75px 30px 50px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .pp-search-results {
+        width: 100vw;
+    }
+}
+
+.gh-num-results {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+}
+
+.gh-search-item {
+    display: block;
+    font-size: 2.5rem;
+    margin: 30px 0;
+    line-height: 3.5rem;
+}
+
+.gh-search-item:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.gh-search-item i {
+    margin-right: 10px;
+    font-size: 2.5rem;
+    text-indent: hanging;
 }
