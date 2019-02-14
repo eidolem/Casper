@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     {{!-- Main stylesheet. This should come after other styles so it takes precedence. --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.min.css"}}" />
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -36,7 +36,11 @@
         {{>footer}}
     </div>
 
-    {{!-- For FitVids --}}
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    {{!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>--}}
+    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
+
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {
@@ -48,18 +52,9 @@
         });
     </script>
 
-    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
-
     {{!-- For pagination infinite scroll --}}
     {{#if pagination.pages}}
-    <script src="{{asset "built/infinitescroll.js"}}"></script>
+        <script src="{{asset "built/infinitescroll.js"}}"></script>
     {{/if}}
 
     {{!-- To populate the dropdown menu with tags --}}
