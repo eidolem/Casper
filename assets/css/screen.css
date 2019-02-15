@@ -2358,6 +2358,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-meta a {
+    color: var(--midgrey);
     text-decoration: underline;
 }
 
@@ -2552,6 +2553,10 @@ Usage (In Ghost editor):
   list-style: none;
 }
 
+.sidenav li a, .sidenav a {
+    color: #dcdcdc;
+}
+
 .sidenav .closebtn, .pp-search-results .closebtn {
   position: absolute;
   top: 20px;
@@ -2593,7 +2598,7 @@ form input {
     text-align: center;
     padding-bottom: 30px;
 }
-
+ 
 .pp-search input{
     background-color: #000;
     color: #fff;
@@ -2625,6 +2630,10 @@ form input {
     border-radius:  5px;
 }
 
+.pp-search-results a {
+    color: var(--darkgrey);
+}
+
 @media (max-width: 700px) {
     .pp-search-results {
         padding: 75px 30px 50px 30px;
@@ -2649,6 +2658,7 @@ form input {
     font-size: 2.5rem;
     margin: 30px 0;
     line-height: 3.5rem;
+    color: var(--darkgrey);
 }
 
 .gh-search-item:hover {

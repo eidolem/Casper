@@ -10,10 +10,24 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{!-- Main stylesheet. This should come after other styles so it takes precedence. --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     {{!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>--}}
-    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
+    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.min.js"}}"></script>
+
+    {{!-- Mailchimp --}}
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #mc_embed_signup{background:#000; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    </style>
+
+    {{!-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -26,19 +40,6 @@
         {{!-- The footer at the very bottom of the screen --}}
         {{>footer}}
     </div>
-        {{!-- Mailchimp --}}
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#000; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-    </style>
-
-    {{!-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    {{!-- Main stylesheet. This should come after other styles so it takes precedence. --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
@@ -86,5 +87,6 @@
     {{ghost_foot}}
 
 </body>
+
 </html>
 
