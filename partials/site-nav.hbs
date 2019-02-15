@@ -5,12 +5,12 @@
         {{/if}}
     </div>
     <div class="site-nav-right">
-    	<form class="pp-search">
+    	<form id="pp-search" class="pp-search">
 		    <input type="text" id="search-field" placeholder="Search" href="javascript:void(0)" class="openSearch" onkeydown="openSearch()">
-		    <i class="fas fa-search"></i>
+		    <i id="search-icon" class="fas fa-search"></i>
 		    <div id="ppSearchResults" class="pp-search-results">
 		    	<a href="javascript:void(0)" class="closebtn" onclick="closeSearch()">&times;</a>
-		    	<div class="search-title">Search Results</div>
+		    	<div id="search-title" class="search-title">Search Results</div>
 		    	<section id="results"></section>
 		 	</div>
 		</form>
@@ -33,11 +33,15 @@
 </script>
 
 <script>
-	var clickOffSearch = document.getElementById("ppSearchResults");
-	var clickOffSearch2 = document.getElementById("search-title");
-	var clickOffSearch3 = document.getElementById("pp-search");
+	var searchOverlay = document.getElementById("ppSearchResults");
+	var searchOverlayTitle = document.getElementById("search-title");
+	var searchBar = document.getElementById("search-field");
+	var searchIcon = document.getElementById("search-icon");
+	console.log(searchOverlayTitle);
 	window.onclick = function(event) {
-		if ((event.target!=clickOffSearch) && (event.target!=clickOffSearch2) && (event.target!=clickOffSearch3)){
+		console.log(event.target);
+		var condition = (event.target==searchOverlay) || (event.target==searchOverlayTitle) || (event.target==searchBar) || (event.target==searchIcon);
+		if (!condition){
 			closeSearch();
 		}
 	}
