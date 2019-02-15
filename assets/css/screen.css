@@ -2588,6 +2588,12 @@ form input {
     color: #000;
 }
 
+.search-title {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 .pp-search input{
     background-color: #000;
     color: #fff;
@@ -2658,4 +2664,96 @@ form input {
 
 .post-full-content blockquote {
     font-style: italic;
+}
+
+.site-description {
+    font-size: 3rem;
+}
+
+.home-header-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -30px -20px 0 -20px;
+}
+
+.home-header-box {
+    position: relative;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #fff;
+    background: #313131;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    padding: 25px;
+    margin: 0 20px 40px 20px;
+}
+
+.home-header-box-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+ 
+.home-header-box-content {
+    list-style-type: none;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.home-header-box-content ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+}
+
+.home-header-box-content li {
+    margin: 0;
+    padding: 0;
+}
+
+.home-header-box-content li a {
+    display: block;
+    padding: 20px 0;
+    border-bottom: rgba(255,255,255,.3) 1px solid;
+    color: #fff;
+    vertical-align: top;
+    transition: opacity .3s ease;
+}
+
+.home-header-box-content li a:hover {
+    transition: color .3s ease;
+    color: #b3aeae;
+    text-decoration: none;
+}
+
+.home-header-box-content .insert-categories-here li a {
+    padding: 0;
+    border-bottom: none;
+}
+
+.home-header-box-content li:first-of-type a {
+    padding-top: 10px;
+}
+
+.home-header-box-content li:last-of-type a {
+    border-bottom:none;
+}
+
+.home-quote {
+    display: flex;
+    text-align: center;
+    font-size: 3rem;
+    margin: auto;
+    line-height: 5rem;
+    font-weight: 300;
 }

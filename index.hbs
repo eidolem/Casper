@@ -21,6 +21,25 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
+        <div class="home-header-container">
+            <article class="home-header-box">
+                <header class="home-header-box-title">Featured Articles</header>
+                <div class="home-header-box-content">
+                    <ul class="insert-featured-here"></ul>
+                </div>
+            </article>
+            <article class="home-header-box">
+                <div class="home-quote">Try hard.<br> Scare yourself.<br> Learn.<br> Have fun.
+                </div>
+            </article>
+            <article class="home-header-box">
+                <header class="home-header-box-title">Categories</header>
+                <div class="home-header-box-content">
+                    <ul class="insert-categories-here"></ul>
+                </div>
+            </article>
+        </div>
+
         <div class="post-feed">
             {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -30,3 +49,20 @@ into the {body} of the default.hbs template --}}
 
     </div>
 </main>
+
+
+<script>
+    $.get(ghost.url.api('posts', {filter:"featured:true"})).done(function (data) {
+        $(data.posts).each(function(i, posts) {
+            var featuredArticle = "<li><a href=\"{{@site.url}}" + posts.url + "\"" + ">" + posts.title + "</a></li>";
+            $('.insert-featured-here').append(featuredArticle);
+        })
+    });
+
+    $.get(ghost.url.api('tags')).done(function (data) {
+        $(data.tags).each(function(i, tag) {
+            var item = "<li><a href=\"{{@site.url}}/tag/" + tag.slug + "\"" + ">" + tag.name + "</a></li>";
+            $('.insert-categories-here').append(item);
+        })
+    });
+</script>

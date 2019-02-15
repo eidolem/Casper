@@ -22,7 +22,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     {{!-- Main stylesheet. This should come after other styles so it takes precedence. --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    {{!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>--}}
+    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -35,11 +40,6 @@
         {{!-- The footer at the very bottom of the screen --}}
         {{>footer}}
     </div>
-
-    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    {{!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>--}}
-    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
 
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
@@ -73,9 +73,10 @@
         $("#search-field").ghostHunter({
             results: "#results",
             onKeyUp: true, 
-            info_template: "<p class='gh-num-results'>Search Results:</p>",
-            result_template: "<a id='gh-\{\{ref}}' class='gh-search-item' href='\{\{link\}\}'><i class='far fa-dot-circle'></i>\{\{title\}\}</a>",
-            zeroResultsInfo: true
+            // info_template: "<p class='gh-num-results'>Search Results:</p>",
+            displaySearchInfo: false,
+            result_template: "<a id='gh-\{\{ref}}' class='gh-search-item' href='\{\{link\}\}'><i class='far fa-dot-circle'></i>\{\{title\}\}</a>"
+            // zeroResultsInfo: true
         });
     </script>
 

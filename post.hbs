@@ -49,22 +49,6 @@ into the {body} of the default.hbs template --}}
                     {{content}}
                 </div>
             </section>
-
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
-            {{/if}}
-
-            {{!--
-            <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
-            </section>
-            --}}
-
         </article>
 
     </div>
@@ -121,9 +105,6 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 </aside>
-
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
 
 {{/post}}
 
